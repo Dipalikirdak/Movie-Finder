@@ -1,0 +1,319 @@
+/* ===============================
+   Fonts & Base
+================================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s;
+}
+
+.dark body {
+    background-color: #121212;
+}
+
+/* ===============================
+   Movie Cards
+================================= */
+.movie-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.movie-poster {
+    transition: transform 0.5s ease;
+}
+
+.movie-card:hover .movie-poster {
+    transform: scale(1.05);
+}
+
+.rating-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   Search
+================================= */
+.search-container {
+    max-width: 600px;
+    transition: all 0.3s ease;
+}
+
+.search-container:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.dark .search-container:focus-within {
+    box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.05);
+}
+
+/* ===============================
+   Theme Toggle
+================================= */
+.theme-toggle {
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg);
+}
+
+/* ===============================
+   Loaders
+================================= */
+.skeleton-loader {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%   { opacity: 0.6; }
+    50%  { opacity: 0.3; }
+    100% { opacity: 0.6; }
+}
+
+/* ===============================
+   Pagination
+================================= */
+.pagination-btn {
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   Movie Details
+================================= */
+.detail-poster {
+    max-height: 70vh;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.movie-detail-container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.movie-detail-container.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===============================
+   Buttons
+================================= */
+.back-button {
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateX(-5px);
+}
+
+/* ===============================
+   Detail Layout
+================================= */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .detail-grid {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+.detail-info {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.detail-section {
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 1rem;
+}
+
+/* ===============================
+   Form Container
+================================= */
+.form-container {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.dark .form-container {
+    background-color: #1e1e1e;
+    box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.05);
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.dark .form-container:hover {
+    box-shadow: 0 25px 50px -12px rgba(255, 255, 255, 0.1);
+}
+
+/* ===============================
+   Form Elements
+================================= */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+.dark .form-input {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #f5f5f5;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    transform: translateY(-2px);
+}
+
+.dark .form-input:focus {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+textarea.form-input {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ===============================
+   Button
+================================= */
+.form-button {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    min-height: 44px;
+}
+
+.form-button:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-button:active {
+    transform: translateY(0);
+}
+
+/* ===============================
+   Status Message
+================================= */
+.form-status {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.form-status.success {
+    background-color: #dcfce7;
+    color: #166534;
+    opacity: 1;
+    height: auto;
+}
+
+.dark .form-status.success {
+    background-color: #166534;
+    color: #dcfce7;
+}
+
+.form-status.error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    opacity: 1;
+    height: auto;
+}
+
+.dark .form-status.error {
+    background-color: #b91c1c;
+    color: #fee2e2;
+}
+
+/* ===============================
+   Responsive
+================================= */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 1.5rem;
+        margin: 1rem auto;
+    }
+    
+    .form-input {
+        padding: 0.65rem 0.9rem;
+    }
+    
+    .form-button {
+        padding: 0.65rem 1.25rem;
+    }
+}
+
