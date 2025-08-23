@@ -1,4 +1,4 @@
-yoMovie Finder 🎬✨
+Movie Finder 🎬✨
 
 Movie Finder is a modern, dark/light themed web application that allows users to search for movies, explore popular titles, and view detailed movie information. Built with HTML, CSS, JavaScript, and TailwindCSS, it provides a smooth and responsive user experience.
 
